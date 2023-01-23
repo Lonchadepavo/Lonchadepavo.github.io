@@ -1095,6 +1095,102 @@ section {
   color: #eaebf0;
 }
 
+/*--------------------------------------------------------------
+# Gallery
+--------------------------------------------------------------*/
+.gallery-item {
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 100%;
+  width: 420px;
+  height: 420px;
+
+}
+
+.gallery-item-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 90;
+  transition: all 0.4s;
+}
+
+.gallery-item img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.3s;
+}
+
+
+.gallery-item::after {
+  content: '';
+  width: calc(100% - 3rem);
+  height: calc(100% - 3rem);
+  border: 0px solid #F6F1F8;
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  z-index: 90;
+  transition: all 0.3s;
+  transform: scale(1.1);
+  opacity: 0;
+  display: block;
+  opacity: 0;
+}
+
+.gallery-item-content {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  text-align: center;
+  z-index: 99;
+}
+
+.gallery-item-content h3{
+  font-weight: bold;
+  color: #000000;
+
+}
+
+.gallery-item-description {
+  opacity: 0;
+  transform: scale(1.3);
+  transition: all 0.3s;
+  color:#000000;
+}
+
+.gallery-item img {
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+}
+
+.gallery-item:hover img {
+  width: 100%;
+}
+
+.gallery-item:hover::after {
+  opacity: 1;
+  transform: none;
+}
+
+.gallery-item:hover .gallery-item-description {
+  opacity: 1;
+  transform: none;
+}
+
+.gallery-item:hover .gallery-item-overlay {
+  background: rgba(220, 221, 221, 0.9);
+}
+
 @media (max-width: 1199px) {
   #footer {
     position: static;
