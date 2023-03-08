@@ -151,8 +151,112 @@
             <hr>
 
             <div class="portfolio-description">
-              <h2>How the project was made</h2>
-              Work In Progress...
+              <h2>How it was made</h2>
+              
+              <p></p>
+
+              <h3>OpenGL abstraction</h3>
+              <p>The project features a built in OpenGL abstraction to help in the creation of the procedural city and be able to develop bigger and better features for the Project
+                for example, with the use of <strong>"Materials"</strong> made from OpenGL programs and shaders and with custom features that let the programmer define some behaviors don't have to worry
+                about the implementation and left all the hard work to interfaces that must communicate your CPU logic with the GPU.
+              </p>
+              
+              <h5><strong>How does it work</strong></h5>
+              <p>All the abstraction is based on an academic graphics library that was created for the purpose of being reimplemented in order to learn how OpenGL works, this part of the project
+                served perfectly as a solid base for the creation of our personal game engine built from scratch.
+              </p>
+
+              <p>
+                The different parts that I had to reimplement were:
+                <ul>
+                  <li>Shader wrapper</li>
+                  <li>Program wrapper</li>
+                  <li>Buffer wrapper</li>
+                  <li>Framebuffer wrapper</li>
+                  <li>Texture wrapper</li>
+                  <li>Rendering loop</li>
+                </ul>
+              </p>
+
+              <h5><strong>Shader wrapper</strong></h5>
+              <p>With the shader wrapper you are able to create a shader, define it's source code and compile it, leaving to the user the only task of creating the shader class itself.
+              </p>
+
+              <h5><strong>Program wrapper</strong></h5>
+              <p>The program needs a group of shaders to create a link between them and it also has methods for the program's use and the uniform setting based on the different data types that you
+                can send to a shader.
+              </p>
+
+              <h5><strong>Buffer wrapper</strong></h5>
+              <p>The buffers work as a way to upload different kind of data to the GPU by using array or element buffers.
+              </p>
+
+              <h5><strong>Framebuffer</strong></h5>
+              <p>One of the most interesting parts of the abstraction itself are the framebuffers, a wrapper that lets you create these "buffers" in order to be able to render directly to a texture
+                and then use it to create things like post-processing effects, drawing shadows or even deferred rendering.
+              </p>
+              <p>In this case we are creating the buffers and dividing the rendering into a <strong>"Z Buffer"</strong> texture and the <strong>"Render Buffer"</strong> itself, after doing this we're creating simple post-processing effects such as blur and chromatic aberration.
+              </p>
+
+              <h5><strong>Texture wrapper</strong></h5>
+              <p>The texture wrapper was built to let the programmer use the texture as a way of drawing something with the shaders or as a way to store information that the shaders could need. An example
+                of the information storage using textures could be the shader receiving data about the fluctuations of a sound wave in order to create an equalizer that behaves differently depending on the sound wave that is receiving.
+              </p>
+              <hr>
+
+              <h3>City's procedural generation</h3>
+              <p>The procedural generation is a very simple one, as we wanted to create something that looked interesting by creating our city in an irregular grid of streets with different
+                lengths and widths.
+              </p>
+              <p>The depth of the procedural generation wasn't deep enough but I managed to use the resources that I had to prevent the buildings from clipping and to try and create a visually interesting
+                looking city. This was one of my first attempts to create a procedural generation.
+              </p>
+
+              <h5>How did the grid worked</h5>
+              <p>The generation was divided in different layers, that we could arrange from the smallest to the biggest:</p>
+              <ul>
+                <li>Flat</li>
+                <li>Building</li>
+                <li>District</li>
+              </ul>
+              <hr>
+
+              <h5>Flat</h5>
+              <p>A flat defines where must be a building, it has an specific size that can differ from the other flats in the grid (irregular grid)</p>
+              <p>Another thing important when creating the flat is to define it's orientation, as this will be the base and parent of the building that will have in top, the easiest way
+                to rate the building and give a little bit of variation is to apply the rotation when creating the flat itself because we are not tracking of detecting relations between buildings.
+              </p>
+              <div>
+                <img src="assets/img/portfolio/flat2.png" width="360" height="360">
+                <p><i>Flat example</i></p>
+              </div>
+
+              <h5>Building</h5>
+              <h5>District</h5>
+              
+              <h5>Grid generation</h5>
+              <h5>Street segments</h5>
+
+              <h3>Frustum culling</h3>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas odio quam corrupti voluptatem! 
+                Quasi hic in vitae quia dolorem asperiores ut consectetur temporibus maiores saepe amet enim, fugit iste labore?</p>
+              <hr>
+
+              <h3>Geometry shaders</h3>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas odio quam corrupti voluptatem! 
+                Quasi hic in vitae quia dolorem asperiores ut consectetur temporibus maiores saepe amet enim, fugit iste labore?</p>
+              <hr>
+
+              <h3>Frame buffers and post-processing</h3>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas odio quam corrupti voluptatem! 
+                Quasi hic in vitae quia dolorem asperiores ut consectetur temporibus maiores saepe amet enim, fugit iste labore?</p>
+              <hr>
+
+              <h3>Lighting system</h3>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas odio quam corrupti voluptatem! 
+                Quasi hic in vitae quia dolorem asperiores ut consectetur temporibus maiores saepe amet enim, fugit iste labore?</p>
+              <hr>
+
             </div>
           </div>
         </div>
