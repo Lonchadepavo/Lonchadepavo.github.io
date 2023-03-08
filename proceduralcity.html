@@ -220,22 +220,59 @@
                 <li>District</li>
               </ul>
               <hr>
-
-              <h5>Flat</h5>
+              <br>
+              <h5><strong>Flat</strong></h5>
               <p>A flat defines where must be a building, it has an specific size that can differ from the other flats in the grid (irregular grid)</p>
               <p>Another thing important when creating the flat is to define it's orientation, as this will be the base and parent of the building that will have in top, the easiest way
                 to rate the building and give a little bit of variation is to apply the rotation when creating the flat itself because we are not tracking of detecting relations between buildings.
               </p>
+
+              <p>The flat also has its own mesh and material, being able to change in case you wanted to have custom flats, even being different between them. In this example the flat
+                used is just a cube scaled to look like a platform with a concrete texture.
+              </p>
+
               <div>
                 <img src="assets/img/portfolio/flat2.png" width="360" height="360">
-                <p><i>Flat example</i></p>
+                <p><i>Flat example.</i></p>
+              </div>
+              <br>
+              <h5><strong>Building</strong></h5>
+              <p>The building is just an entity with a material that has a specific albedo texture, specular map and mesh. All the buildings are pre-loaded before start generating the city.
+              </p>
+
+              <p>When placing the buildings, we are setting them as "derived" from the flat where they're placed in order to keep the flat's rotation, position and even the scale, as the buildings
+                should be scaled based on the needs of the flat itself but trying to keep the size ratio and not deforming the meshes too much.
+              </p>
+
+              <div>
+                <img src="assets/img/portfolio/building1.png" width="360" height="360">
+                <img src="assets/img/portfolio/building2.png" width="360" height="360">
+                <img src="assets/img/portfolio/building3.png" width="360" height="360">
+                <img src="assets/img/portfolio/building4.png" width="360" height="360">
+                <p><i>Building examples.</i></p>
               </div>
 
-              <h5>Building</h5>
-              <h5>District</h5>
+              <br>
+              <h5><strong>District</strong></h5>
+              <p>The district is the main "piece" of the city, a city is created by grouping multiple districts and are formed by flats, streets and buildings.</p>
+              <p>You can create each district with different sizes and configurations as each one of them is built seperately from the rest and don't know each other, so the streets won't mess up
+                with the twist that you're the one that must locate both districts aligned in order to create a sensation of a connected city.
+              </p>
+
+              <p>Distrcits have a very specific structure, with two big avenues that connect in the very center of the district in order to be able to easily connect different districts.
+                They also feature a "square shaped street" that goes around all the district and finishes connecting everything and avoid having dead end streets.
+              </p>
               
-              <h5>Grid generation</h5>
-              <h5>Street segments</h5>
+              <div>
+                <img src="assets/img/portfolio/district_view.PNG">
+                <p><i>District example with a red fog.</i></p>
+              </div>
+
+              <br>
+              <h5><strong>Streets</strong></h5>
+
+              <br>
+              <h5><strong>Grid generation</strong></h5>
 
               <h3>Frustum culling</h3>
               <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas odio quam corrupti voluptatem! 
