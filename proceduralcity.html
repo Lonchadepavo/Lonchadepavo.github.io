@@ -270,8 +270,83 @@
 
               <br>
               <h5><strong>Grid generation</strong></h5>
+              <p>Now that I've explained the different segments of our city I'm explaining the whole process of generating it.</p>
               
+              <p>The first step is to create a District by setting up its location, size, street width and avenue width, after that the district starts creating a series of structures called
+                "TemporalStreet", which are the first approach to the streets of our district.
+              </p>
               
+              <br>
+              <h5><strong>Circular and central avenues</strong></h5>
+              <p>Every district has in common a series of streets, the ones called "Circular avenues" and "central avenues", these ones will be created by using temporal streets and the layout would look like this:</p>
+              <div>
+                <img src="assets/img/portfolio/temporal_district_layout.png" width="480" height="480">
+                <p><i>District layout with temporal streets.</i></p>
+              </div>
+
+              <p>The purpose of the temporal streets is to mark off the boundings of the district and to have a way to communicate different districts,</p>
+              
+              <br>
+              <h5><strong>Horizontal and vertical streets</strong></h5>
+              <p>The next step is to create temporal streets to delimitate the flats of our district using the street width that we selected when we created the district. In this step we're going to
+                make a distinction between horizontal and vertical streets and we will create the horizontal streets first in order to define the height of our future flats.
+              </p>
+              <div>
+                <img src="assets/img/portfolio/horizontal_grid.png" width="480" height="480">
+                <p><i>District layout with temporal horizontal streets.</i></p>
+              </div>
+
+              <p>This is the layout with all the horizontal streets, and now we're going to repeat the same operation but with vertical streets, generating the next layout:</p>
+              <div>
+                <img src="assets/img/portfolio/city_grid.png" width="480" height="480">
+                <p><i>District layout with temporal horizontal streets.</i></p>
+              </div>
+
+              <p>And with this simple steps we have the layout for our districts with a fixed spaced for the flats where the buildings will be placed, but currently we only have a "data layout"
+                and we need to convert it into a "physical" one by placing streets and flats.
+              </p>
+
+              <p>The main problem with this approach is that we want to connect our streets smoothly with the different intersections that we have, and currently we only have a bunch of horizontal and vertical
+                streets, and if we place our streets over those "temporal streets" our streets will collide and have <strong>"z fighting"</strong> and very ugly intersections, so, we are going to segment the streets using
+                the intersections between the horizontal and vertical temporal streets and will create "physical" streets on runtime.
+              </p>
+
+              <br>
+              <h5><strong>Street segmentation</strong></h5>
+              <p>For the segmentation process first we have to sort our arrays of temporal streets as we want to iterate through them from the left to the right and from the top to the bottom.</p>
+              <p>The segmentation process is very simple, we just need to check the intersections of the streets and have a control on where the street starts and of its size, and with that data we are ready
+                to instantiate a street with wanted mesh.
+              </p>
+
+              <p>Its important to know which street are we calculating, as we will need to differentiate between streets and intersections, but that's the next step, first we want to make sure that
+                we can create the separate street segments.
+              </p>
+
+              <p>To ease the process of segmentating the streets we are going to take advantage of the predictability of our grid by just calculating the intersections of two of our streets, the circular bottom
+              and the circular left avenue as they also count as regular streets but wider.
+              </p>
+
+              <div>
+                <img src="assets/img/portfolio/segmentation.gif" width="480" height="480">
+                <p><i>District segmentation process.</i></p>
+              </div>
+
+              <p>As you can see the streets are being segmentd in order, first the horizontal and then the vertical one. You also may have noticed that the street is cut just before the intersection and that's 
+                because we need those spots to place a intersection depending on the number of connecting streets in that point.
+              </p>
+
+              <p>The next step is to repeat the process for every street used the stored intersections and interpolating between them, and with that we achieve a full district ready to place flats and buildings.</p>
+              <p>The positioning of the flats is made during the segmentation process, as it's the optimal moment to do it because you're checking the bounds of the intersecting streets and you can find the central
+                point and size of the flat easily.
+              </p>
+
+              <br>
+              <h5><strong>Building placement</strong></h5>
+              <p>The building placement is the last thing we need to do and the process is very simple. First we need to arrange our buildings by size, with three or four different sizes. This is not a very accurte technique but it's easy and fast.
+                After the sorted the buildings we can iterate through our flats, check it's bounds and then choose randomly a building that fits that size with a margin.
+              </p>
+              <hr>
+
               <br>
               <h3>Frustum culling</h3>
               <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas odio quam corrupti voluptatem! 
