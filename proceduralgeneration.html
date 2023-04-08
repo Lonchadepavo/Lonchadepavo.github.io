@@ -88,7 +88,7 @@
         <div class="row gy-4">
 
           <div class="col-lg-8">
-            <h1>A procedurally generated world of voxels with agents.</h1>
+            <h1>A procedurally generated voxel world with agents.</h1>
             <div class="portfolio-details-slider swiper">
                 <img src="assets/img/portfolio/proceduralgif.gif" alt="">
               <div class="swiper-pagination"></div>
@@ -101,7 +101,7 @@
               <ul>
                 <li><strong>Category</strong>: Unity Project</li>
                 <li><strong>Project date</strong>: -</li>
-                <li><strong>Made by</strong>: <a href="https://www.linkedin.com/in/ramon-perez-segarra/">Ramón Pérez Segarra</a> and <a href="https://www.linkedin.com/in/joel-salas-martos-7983a81ba/">Joel Salas Martos</a>.</li>
+                <li><strong>Made by</strong>: <a href="https://www.linkedin.com/in/ramon-perez-segarra/">Ramón Pérez Segarra</a>.</li>
               </ul>
               <br>
               <h3>Description</h3>             
@@ -125,22 +125,16 @@
                 <li>Atlas mapping.</li>
                 <li>Rendering optimizations.</li>
                 <li>Different kinds of cubes.</li>
+                <li>Biome variations depending on temperature and precipitation noise maps.</li>
+                <li>Procedural trees spawned on certain areas of the map.</li>
+                <li>Simple agents with pathfinding and the ability to navigate the world.</li>
               </ul>
               <h2>Future additions</h2>
               <ul>
-                <li>Differents shapes (for creating plants and different types of blocks).</li>
+                <li>Different types of "blocks" for creating more variety of objects in the world.</li>
                 <li>An overworld made with wave funtion collapse.</li>
-                <li>Plants, trees and resources.</li>
-                <li>Caves.</li>
-                <li>Agents.</li>
-              </ul>
-            </div>
-            <div class="portfolio-description">
-              <h2>What I did</h2>
-              <ul>
-                <li>Voxel rendering techniques.</li>
-                <li>Perlin multi noise generation.</li>
-                <li>Atlas mapping.</li>
+                <li>Different types of resources to collect.</li>
+                <li>Procedurally generated caves.</li>
               </ul>
             </div>
 
@@ -148,7 +142,40 @@
 
             <div class="portfolio-description">
               <h2>How it was made</h2>
-              <p>Work in progress...</p>
+              <p>Now I will explain the project's creation process, some details on optimization techniques utlized here and I will talk about its future.</p>
+
+              <h3>Project description</h3>
+              <p>This is a <i>Procedurally generated voxel world</i> made in Unity Engine with the purpose of learning about procedural generation techniques and rendering optimizations on
+              commercial engines such as Unity.
+              </p>
+
+              <p>The main objective of the project was to create a procedurally generated world (the first approach had no voxels, instead it was just a 2D grid inspired by games such as Dwarf Fortress or Rimworld).
+              with agents that were able to move through the world, interact with its objects and with other agents. 
+              </p>
+              <P>
+              Due to time restrictions the project right now only has a procedurally generated world with simple agents
+              that can navigate the generated world. It also has differentes biomes (very simple ones) defined by a couple of noise maps (precipitation and temperature maps) and some trees to decorate those biomes.
+              </p>
+              
+              <div>
+                <p><strong>These are a few examples of the generation on its current state:</strong></p>
+                <img src="assets/img/portfolio/voxelworld/generation_4.jpg" width="384">
+                <img src="assets/img/portfolio/voxelworld/generation_4_1.jpg" width="384">
+                <img src="assets/img/portfolio/voxelworld/generation_1.jpg" width="384">
+                <img src="assets/img/portfolio/voxelworld/generation_2.jpg" width="384">
+                <img src="assets/img/portfolio/voxelworld/central_mountain_range.jpg" width="384">
+                <img src="assets/img/portfolio/voxelworld/twin_holes.png" width="384">
+              </div>
+              <br><br>
+              <div>
+                <p><strong>And this is an example of a simple agent moving through the world:</strong></p>
+                <img src="assets/img/portfolio/voxelworld/simple_agent_pathfinding.gif" width="768">
+              </div>
+
+              <br><br><hr>
+              <h3>World generation</h3>
+              <h3>Make it rain</h3>
+              <h3>Simple agents</h3>
             </div>
           </div>
         </div>
