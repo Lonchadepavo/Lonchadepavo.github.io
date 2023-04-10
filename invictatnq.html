@@ -143,16 +143,49 @@
 
             <div class="portfolio-description">
               <h2>How it was made</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt nesciunt maxime assumenda laudantium repellat quisquam neque dicta explicabo impedit. Animi, excepturi unde! Quae, quaerat laboriosam. Ducimus vero ut optio maiores!.</p>
+              <p>The game is being developed with the objective of being a challenging game inspired by titles such as Death's Door, Dark Souls and Tunic by picking up features of those games to try and create
+                an interesting game experience, which together with the artistic direction make the game have its own identity.
+              </p>
+
+              <p>In the project I'm focusing mainly on everything related to the enemies and the combat system and that's what I'm going to showcase and explain in this article.</p>
               <img src="assets/img/portfolio/invicta/parry_gif.gif">
 
               <br>
+              <br>
 
               <h3><strong>Stealth System</strong></h3>
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod quas totam maiores consectetur eos perferendis, maxime ut mollitia? Molestias omnis corrupti vel doloribus esse minima totam facere debitis reiciendis aliquid.</p>
+              <p>The stealth system is custom made and its not using the perception system that Unreal provides.</p>
+
               <img src="assets/img/portfolio/invicta/stealth_1.gif">
               <img src="assets/img/portfolio/invicta/stealth_2.gif">
+              <br><br>
               <img src="assets/img/portfolio/invicta/stealth_3.gif">
+
+              <p>Every enemy in the game uses the same stealth system (except the bosses) and it's a very simple system that just launches raycasts in a "cone shape" to detect entities in it's path.</p>
+              <p>The system launches raycasts to the player height so it can work on different heights. This simple tricks works pretty well as there is only one thing to detect in the game (one player).</p>
+              <img src="assets/img/portfolio/invicta/stealth_3.png" width="768">
+              <br><br>
+
+              <p>The system is divided in two parts, the first one os the forward area of the cone which is divided into configurable areas with different detection values for each area.</p>
+              <p>The second part is the purple area behind the enemy that fits the angle left by the cone so there are no blind spots for the enemy as they can also detect you (at a slower rate) when you're in their backs.</p>
+              <img src="assets/img/portfolio/invicta/stealth_1.png" width="768">
+              <br><br>
+              <p>You can also define different kinds of blocking volumes to create "stealth bushes", "transparent walls" or just normals walls which the enemy cannot see through.</p>
+              <img src="assets/img/portfolio/invicta/stealth_2.png" width="400">
+              <img src="assets/img/portfolio/invicta/stealth_4.png" width="400">
+              <img src="assets/img/portfolio/invicta/stealth_5.png" width="400">
+
+              <br><br>
+              <h4>Problems with this system</h4>
+              <p>The main problem with this system is its performance, as having dozens os enemies launching tons of raycasts in every direction is something very expensive and there are a lot of ways of doing this better and cheaper.</p>
+              <p>There are some optimizations applied to this technique, for example, the detection system of the enemies outside the screen is deactivated, and also is deactivated when an enemy has detected you, as it has no use after that.</p>
+              <p>Those two optimizations lighten the weight of the system and improve vastly the performance as there will never be a lot of enemies who hasn't detected you in screen at the same time.</p>
+              
+              <h4>Further optimizations</h4>
+              <p>There are other optimizations that could be made, for example, just launching raycasts in the direction of the player when its inside the detection angle of an enemy, that would reduce the number of raycasts a lot too but currently
+                the game has been tested with the current system and it handles it pretty well so right now its fitting pretty nice our needs.
+              </p>
+
               <br>
               <hr>
 
@@ -161,19 +194,26 @@
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam nisi corrupti neque modi sunt explicabo perferendis, unde, ipsum atque laboriosam aliquam. Id ab alias impedit porro possimus esse iure vitae.</p>
               <h5>Creeping</h5>
               <img src="assets/img/portfolio/invicta/creeping.gif">
+              <br>
 
               <h5>Creeping runner</h5>
               <img src="assets/img/portfolio/invicta/creeping_runner.gif">
+              <br>
 
               <h5>Creeping captain</h5>
               <img src="assets/img/portfolio/invicta/creeping_captain.gif">
+              <br>
 
               <br>
-              
+              <br>
+
               <h4>Ghosts</h4>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem explicabo sunt nihil neque rerum veritatis nostrum fugiat quaerat, eum aperiam inventore ipsam adipisci quasi et ex facilis ea esse quisquam.</p>
               <h5>Red ghost</h5>
+              <p><i>WORK IN PROGRESS...</i></p>
+
               <h5>Blue ghost</h5>
+              <p><i>WORK IN PROGRESS...</i></p>
 
               <br>
               <br>
@@ -184,18 +224,22 @@
               <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita maiores pariatur nulla quisquam excepturi autem tempore! Earum sit tenetur id impedit! Officia repudiandae maxime dolores itaque facilis ab nesciunt quis!</p>
               <h5>Arcanist</h5>
               <img src="assets/img/portfolio/invicta/arcanist.gif">
+              <br>
 
               <h5>Icecanist</h5>
               <img src="assets/img/portfolio/invicta/icecanist.gif">
+              <br>
 
               <h5>Firecanist</h5>
               <img src="assets/img/portfolio/invicta/firecanist.gif">
+              <br>
 
               <h5>Lightcanist</h5>
               <img src="assets/img/portfolio/invicta/lightcanist.gif">
+              <br>
 
               <h5>Shapeshifter</h5>
-
+              <p><i>WORK IN PROGRESS...</i></p>
               <br>
               <br>
               <hr>
