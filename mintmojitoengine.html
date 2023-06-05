@@ -115,6 +115,10 @@
                 <p>The engine is built component oriented using Entity Component System (ECS) and has different features such as custom and optimized lighting, a user friendly API
                   and a lot of little tweaks made in order to ease the task of creating games with it.
                 </p>
+
+                <p>
+                  <span style="color: red;">This project is private because it is an academic project but I can show you code through a personal invitation to my repository.</span>
+                </p>
               </ul>
             </div>
           </div>
@@ -141,24 +145,83 @@
                 <h2>How it was made</h2>
 
                 <h3>Engine architecture</h3>
+                <p>
+                  The main effort during the development of the engine was put into its architecture as I wanted to learn how a proper engine architecture would look like
+                  and also wanted an easy way of adding new features that didn't require major changes to the basic architecture of the engine.
+                </p>
 
+                <p>
+                  In addition to this, I focused on having an API that is easy to understand and use for all potential users, 
+                  accompanied by a set of basic usage guides to learn how to develop with the engine.
+                </p>
+                <br><br>
                 <h4>User friendly API</h4>
+                <p>
+                  The engine has a very simple API to use, which employs code that is quite similar to <b>Unity Engine</b>, on which it is heavily based.
+                </p>
 
+                <p>
+                  Here's an example of how to build a very basic scene with the main rendering loop and an entity with a mesh and a material:
+                </p>
+                <br>
+                <img src="assets/img/portfolio/engine/friendly_api_1.PNG">
+                <br><br>
+                <p>
+                  As seen in this image, each element is clearly distinguished, and the engine's tasks are divided into different classes (ResourceManager, RenderManager, EntityManager), 
+                  all of which are straightforward to use. It also employs simple pointer management through smart pointers.
+                </p>
+
+                <br><br>
                 <h4>Entity Component System (ECS)</h4>
+                <p>
+                  The engine is built using entities and components, leveraging the Entity Component System to facilitate the usage of different engine elements and distribute functionalities 
+                  (rendering, camera, lights, transform) into different classes that compose an entity.
+                </p>
 
+                <p>
+                  The system is based on the use of entities and components, where entities act as containers for components, providing a name and a means to identify those components.
+                </p>
+
+                <br><br>
                 <h4>User oriented class archtypes</h4>
+                <P>
+                  The engine has archetype classes for different elements that users may frequently use. Currently, it includes archetypes for "Camera," "Light," and "Sprite." 
+                  These archetypes are simply wrappers around entities but provide easy access to the most common components of those wrappers, such as camera, light, and rendering components.
+                </P>
 
+                <p>
+                  The archetypes are not internally used within the engine to maintain coherence with the Entity Component System. Therefore, 
+                  whenever the engine requires a specific component, it will directly utilize that component instead of working with archetypes. The archetypes are designed to simplify the workflow for users.
+                </p>
+
+                <br><br>
                 <h4>Generic and specialized materials</h4>
+                <p>
+                  The engine implements a simple way to create your own shaders with GLSL and include them in the rendering pipeline through the creation of generic (or specialized) materials. 
+                  These materials support multiple types of shaders using a data structure that stores Uniform information.
+                </p>
+
+                <p>
+                  With the <b>Material</b> class you can define your own shaders and uniforms but the engine also allows to create a custom material that inherits from the base material
+                  in order to define custom behaviors and uniforms in an easier way by overriding functions of the base material that will work automatically in the rendering pipeline.
+
+                  The engine has some custom materiales created (Lit material, unlit material) that can be used as an example for new custom materials.
+                </p>
 
                 <hr>
+                <br><br>
                 <h3>Rendering techniques and resources</h3>
 
+                <br><br>
                 <h4>Forward rendering</h4>
 
+                <br><br>
                 <h4>Deferred rendering</h4>
 
+                <br><br>
                 <h4>Lights and shadow casting</h4>
 
+                <br><br>
                 <h4>Normal mapping</h4>
 
               </div>
