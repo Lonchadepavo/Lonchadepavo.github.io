@@ -211,18 +211,63 @@
                 <hr>
                 <br><br>
                 <h3>Rendering techniques and resources</h3>
-
+                <p>
+                  The engine has been built using different rendering techniques and implements fully functional lighting, shadow casting, normal mapping and post-processing both in
+                  forward and deferred rendering.
+                </p>
+                
                 <br><br>
                 <h4>Forward rendering</h4>
+                <p>
+                  The basic rendering pipeline of the engine that executes the shaders for each geometry on the scene. This is a less efficient way of rendering multiple objects that need a lot of
+                  lighting calculation as every calculation will be made for each geometry in the scene.
+                </p>
+
+                <img src="assets/img/portfolio/engine/forward.png" width="1280" height="720"/>
+                <p>An example of a scene with forward rendering.</p>
+
 
                 <br><br>
                 <h4>Deferred rendering</h4>
+                <p>
+                  Deferred is a more advanced way of rendering scenes by composing a final texture from different textures called g buffers that store the properties of every element in a scene.
+                </p>
 
-                <br><br>
-                <h4>Lights and shadow casting</h4>
+                <p>
+                  This rendering technique is cheaper when working with large scenes that have a lot of lights involved in as the calculations for the lighting are only made once instead of the multiple times needed by the forward rendering pipeline.
+                </p>
 
+                <img src="assets/img/portfolio/engine/color.png" width="400" height="400"/>
+                <img src="assets/img/portfolio/engine/specular.png" width="400" height="400"/>
+                <img src="assets/img/portfolio/engine/position.png" width="400" height="400"/>
+                <img src="assets/img/portfolio/engine/normals.png" width="400" height="400"/>
+                <img src="assets/img/portfolio/engine/depth.png" width="400" height="400"/>
+                <img src="assets/img/portfolio/engine/shader.png" width="400" height="400"/>
+                <p>An example of the different g buffers of a scene</p>
+
+                <img src="assets/img/portfolio/engine/lit.png" width="1280" height="720"/>
+                <p>The final result of the scene with 3 directional lights (red, green and blue).</p>
+                
                 <br><br>
                 <h4>Normal mapping</h4>
+                <p>
+                  Another interesting feature of the engine is the use of normal maps for increasing the quality of simple geometries withput increasing the vertex count and its complexity.
+                </p>
+
+                <img src="assets/img/portfolio/engine/normal_mapping1.png" width="400" height="246"/>
+                <img src="assets/img/portfolio/engine/normal_mapping2.png" width="400" height="246"/>
+                <p>Comparison of a quad with(left) and without(right) normal mapping.</p>
+
+                <br><br>
+                <h4>Post-processing</h4>
+                <p>
+                  The engine also implements an easy way of creating your custom post-processing effects by writing fragment shaders and adding them to the rendering pipeline through specific post-processing materials
+                  that are very easy to use.
+                </p>
+
+                <img src="assets/img/portfolio/engine/postprocessing.png" width="1280" height="720"/>
+                <p>An example of a simple post-processing effect that inverts the colors of the scene.</p>
+
 
               </div>
 
